@@ -21,3 +21,28 @@ export function processInfoBlock(data) {
 
     return processedData 
 }
+
+export async function fetchBlogArticles() {
+    const response = await fetchDataFromStrapi('api/blog-articles?populate=deep')
+    const processedBlogArticle = response.data.map(processBlogArticle)
+    processedBlogArticle.sort((a, z) => new Date(z.publishedAt) - new Date(a.publishedAt))
+    return processedBlogArticle
+}
+
+function processBlogArticle(article) {
+    return {
+        ...article.attributes,
+        id:article.id,
+        featuredImage: BASE_URL + article.attributes?.featuredImage?.data[0]?.attributes?.url
+    }
+}
+
+export function formatDate(dateString) {
+    const date = new Date(dateString)
+    const options = {
+        year: 'numeric',
+        month: 'long',
+        day: '2-digit'
+    }
+    return date.toLocaleDateString('en-US', options);
+}
