@@ -20,7 +20,7 @@ export default function FeaturedArticle({data}) {
             </div>
             {
             itemNumber < data.length &&  
-            <button className="text-white w-[150px] mx-auto font-semibold text-lg bg-[#14A998] px-8 py-3 rounded-full hover:bg-[#6BCE8C]" onClick={onShowMore}>See more</button>
+            <button className="text-white mb-7 w-[150px] mx-auto font-semibold text-lg bg-[#14A998] px-8 py-3 rounded-full hover:bg-[#6BCE8C]" onClick={onShowMore}>See more</button>
             }
         </div>
     )
