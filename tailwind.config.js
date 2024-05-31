@@ -10,10 +10,13 @@ module.exports = {
       screens: {
         'xs': '385px',
         '460': '460px',
+        '640': '640px',
         '740': '740px',
-        'md': '880px',
+        'md': '880px'
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

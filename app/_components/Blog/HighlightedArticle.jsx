@@ -9,7 +9,7 @@ export default function HighlightedArticle({data}) {
                 <div className="block sm:hidden w-full sm:w-1/2 flex justify-center">
                     <img className="inline sm:hidden h-[300px] rounded-3xl object-contain" src={data.featuredImage} alt=""/>
                 </div>
-                <button className="text-white mx-auto sm:mx-0 font-semibold text-lg w-[153px] bg-[#14A998] px-8 py-3 rounded-full hover:bg-[#6BCE8C]">Read more</button>
+                <Link className="text-white mx-auto sm:mx-0 font-semibold text-lg w-[153px] bg-[#14A998] px-8 py-3 rounded-full hover:bg-[#6BCE8C]" href={"/news/" + data.slug}>Read more</Link>
             </div>
             <div className="w-1/2 hidden sm:flex justify-end items-start">
                 <img className="hidden sm:inline h-[300px] rounded-3xl object-contain" src={data.featuredImage} alt=""/>
