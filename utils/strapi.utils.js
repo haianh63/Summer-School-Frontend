@@ -50,3 +50,25 @@ export function formatDate(dateString) {
 export function extractImageUrl(imageData) {
     return BASE_URL + imageData?.data?.attributes?.url;
 }
+
+export async function getOpenAndCloseTime() {
+    const data = await fetchDataFromStrapi('api/registration-times');
+    const result = [data.data[0].attributes.Open, data.data[0].attributes.End];
+    const openDateTime = new Date(data.data[0].attributes.Open);
+    const closeDateTime = new Date(data.data[0].attributes.End);
+    const currentTime = new Date();
+    return {
+        open: openDateTime.toISOString(), 
+        close: closeDateTime.toISOString(), 
+        current: currentTime.toISOString()
+    };
+}
+
+export async function isRegistrationOpen() {
+    const time = await getOpenAndCloseTime();
+    if (time.open <= time.current && time.current <= time.close) {
+        return true;
+    } else {
+        return false;
+    }
+}

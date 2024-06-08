@@ -13,7 +13,7 @@ export default function FeaturedArticle({data, headline}) {
     return (
         <div className="w-full mb-7 mt-8 px-8 md:px-16 flex flex-col gap-16">
             <h1 className="text-3xl 460:text-4xl font-bold">{headline}</h1>
-            <div className="grid grid-cols-1 460:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10" id="featured-article">
+            <div className="grid grid-cols-1 460:grid-cols-2 lg:grid-cols-3 1500:grid-cols-4 gap-10" id="featured-article">
                 {data.slice(0, itemNumber).map((article) => {
                     return <FeaturedItem key= {article.slug} data={article} />
                 })}

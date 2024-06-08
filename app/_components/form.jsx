@@ -92,10 +92,10 @@ export default function Form() {
                         <select className="w-full p-2 border border-gray-300 rounded-lg text-gray-500 focus:outline-none" id="expertiseLevel" name="expertiseLevel" defaultValue={expertiseLevel}
                         onChange={(e) => setExpertiseLevel(e.target.value)}>
                             <option className="hidden" value="DEFAULT" disabled></option>
-                            <option value="novice">Novice</option>
-                            <option value="intermediate">Intermediate</option>
-                            <option value="advanced">Advanced</option>
-                            <option value="expert">Expert</option>
+                            <option value="Novice">Novice</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
+                            <option value="Expert">Expert</option>
                         </select>
                     </div>
                     <div className="w-full flex flex-col gap-2 invisible">
